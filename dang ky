@@ -72,15 +72,11 @@
 <script>
     document.getElementById('signupForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
-        // Lấy các giá trị từ form
         let username = document.getElementById('username').value;
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
-
         let isValid = true;
 
-        // Kiểm tra tên người dùng
         if (username.trim() === "") {
             document.getElementById('usernameError').textContent = "Tên người dùng không được để trống.";
             isValid = false;
@@ -88,7 +84,6 @@
             document.getElementById('usernameError').textContent = "";
         }
 
-        // Kiểm tra email
         let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailPattern.test(email)) {
             document.getElementById('emailError').textContent = "Email không hợp lệ.";
